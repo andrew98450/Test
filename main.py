@@ -1,3 +1,4 @@
+import os
 import remi
 import remi.gui as gui
 
@@ -25,4 +26,4 @@ class ChatApp(remi.App):
         return super().on_close()
 
 if __name__ == '__main__':
-    remi.start(ChatApp, address="0.0.0.0", port=8080)
+    remi.start(ChatApp, address="0.0.0.0", port=int(os.environ.get("PORT", 8080)), enable_file_cache=True, start_browser=False)
