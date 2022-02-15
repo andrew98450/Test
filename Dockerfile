@@ -1,5 +1,7 @@
 FROM python:3.9-slim
 
-RUN pip install remi pycryptodome
+COPY . ./
+
+RUN pip install -r requirement.txt
 
 CMD ["python", "main.py"]
