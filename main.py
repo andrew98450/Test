@@ -25,4 +25,4 @@ class ChatApp(remi.App):
         return super().on_close()
 
 if __name__ == '__main__':
-    remi.start(ChatApp, port=8080)
+    remi.start(ChatApp, address="0.0.0.0", port=8080)
