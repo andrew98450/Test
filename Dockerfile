@@ -1,10 +1,5 @@
-FROM ubuntu:20.04
+FROM python:3.9-slim
 
-ENV APP_HOME /app
-WORKDIR $APP_HOME
-COPY . ./
+RUN pip install -r requirement.txt
 
-RUN apt update
-RUN apt install python3-pip -y
-RUN pip3 install --no-cache-dir -r requirements.txt
-CMD ["/usr/bin/python3", "main.py"]
+CMD ["python", "main.py"]
